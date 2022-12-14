@@ -92,8 +92,8 @@ information.
 
 * Require Authentication: false
 * Request
-  * Method: GET
-  * URL: users/:id
+  * Method: POST
+  * URL: /login
   * Headers:
     * Content-Type: application/json
   * Body:
@@ -162,7 +162,7 @@ user's information.
 * Require Authentication: false
 * Request
   * Method: POST
-  * URL: /users
+  * URL: /signupUser
   * Headers:
     * Content-Type: application/json
   * Body:
@@ -451,7 +451,7 @@ Create and return a new image for a group specified by id.
 * Require proper authorization: Current User must be the organizer for the group
 * Request
   * Method: POST
-  * URL: groups/:groupId/url
+  * URL: /groups/:groupId/image
   * Headers:
     * Content-Type: application/json
   * Body:
@@ -616,8 +616,8 @@ Returns all venues for a group specified by its id
 * Require Authentication: Current User must be the organizer of the group or a member of
   the group with a status of "co-host"
 * Request
-  * Method: /groups/:groupId/venues
-  * URL: ?
+  * Method: GET
+  * URL: /groups/:groupId/venues
   * Headers:
     * Content-Type: application/json
   * Body: none
@@ -667,7 +667,7 @@ Creates and returns a new venue for a group specified by its id
   the group with a status of "co-host"
 * Request
   * Method: POST
-  * URL: /groups/:groupId/:venueId
+  * URL: /groups/:groupsId/venues
   * Headers:
     * Content-Type: application/json
   * Body:
@@ -2011,8 +2011,8 @@ Return events filtered by query parameters.
 
 * Require Authentication: false
 * Request
-  * Method: ?
-  * URL: ?
+  * Method: GET
+  * URL: /events
   * Query Parameters
     * page: integer, minimum: 0, maximum: 10, default: 0
     * size: integer, minimum: 0, maximum: 20, default: 20
